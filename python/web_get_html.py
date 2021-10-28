@@ -8,7 +8,7 @@
 
 ## Library for handling web requests:
 import urllib.request, urllib.error
-## Library for handling outpur to stderr and exit code:
+## Library for handling output to stderr and exit code:
 import sys
 ## Library for returning exit codes as defined in POSIX:
 ## https://docs.python.org/2/library/os.html#process-management
