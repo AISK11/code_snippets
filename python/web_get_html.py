@@ -28,10 +28,10 @@ def web_get_html(url):
         print(f"URLError: {e.reason}", file=sys.stderr)
         sys.exit(os.EX_NOHOST)
 
-    ## Read bytes from HTTPResponse and then decode from bytes to string
+    ## Read bytes from HTTPResponse and then decode from bytes to string:
     html = req.read().decode("utf8")
 
-    ## Return HTML code
+    ## Return HTML code:
     return html
 
 
