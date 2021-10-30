@@ -29,7 +29,6 @@ import os
 from PIL import Image
 
 def multimedia_get_data_img(img_input):
-
     ## Open image (identifies from file content):
     img = Image.open(img_input)
 
