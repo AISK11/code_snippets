@@ -55,4 +55,4 @@ def multimedia_get_data_img(img_input):
 
 
 ## USAGE:
-#multimedia_get_data_img("img01.jpeg")
+# img_data = multimedia_get_data_img("img01.jpeg")
