@@ -51,6 +51,7 @@ def multimedia_get_data_img(img_input):
         "img_n_frames": getattr(img, "n_frames", 1)
     }
 
+    ## Returns dictionary filled with data about the image:
     return img_data
 
 
