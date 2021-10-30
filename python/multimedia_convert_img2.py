@@ -83,7 +83,7 @@ def multimedia_convert_img_to_ico(img_input, img_output=None, img_size=256):
 #  JPG  #
 #########
 ## quality = 0 - 100; Not recommended to go over 95.
-def multimedia_convert_img_to_jpg(img_input, img_output=None, img_quality=95):
+def multimedia_convert_img_to_jpg(img_input, img_output=None, img_quality=95, img_progressive=False):
 
     ## If 'img_output' was not set by user, use the same name as 'img_input', just change extension:
     if img_output == None:
@@ -93,7 +93,7 @@ def multimedia_convert_img_to_jpg(img_input, img_output=None, img_quality=95):
     img = Image.open(img_input)
 
     ## Save image (and converts based on the name extension):
-    img.save(img_output, quality=img_quality)
+    img.save(img_output, quality=img_quality, optimize=True, progressive=img_progressive)
 
 
 
@@ -103,7 +103,5 @@ def multimedia_convert_img_to_jpg(img_input, img_output=None, img_quality=95):
 ## Usage Examples:
 #multimedia_convert_img_to_bmp(HOME_DIR + "img01.jpg", HOME_DIR + "img01.bmp")
 #multimedia_convert_img_to_ico(HOME_DIR + "img01.jpg", HOME_DIR + "img01.ico", 256)
-#multimedia_convert_img_to_jpg(HOME_DIR + "img01.png", HOME_DIR + "img01.jpg", 95)
+#multimedia_convert_img_to_jpg(HOME_DIR + "img01.png", HOME_DIR + "img01.jpg", 95, True)
 
-
-multimedia_convert_img_to_jpg("lumine02.png", "lumine02.jpg", 95)
