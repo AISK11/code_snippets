@@ -77,6 +77,9 @@ def multimedia_convert_img_to_icns(img_input, img_output=None, img_size=512, img
     if img_output == None:
         img_output = ''.join(img_input.split(".")[:-1])+".icns"
 
+    ## Open image (identifies from file content):
+    img = Image.open(img_input)
+
     ## Avoid unsupported resolution:
     if img_size <= 16:
         img_size = 16
@@ -100,7 +103,7 @@ def multimedia_convert_img_to_icns(img_input, img_output=None, img_size=512, img
     ## Save image (and converts based on the name extension):
     img.save(img_output, sizes=[(img_size, img_size, img_scale)])
 
-
+## NOTE: it looks like only 128x128 resolution is supported with scale 1.
 
 
 
@@ -185,14 +188,25 @@ def multimedia_convert_img_to_webp(img_input, img_output=None, img_quality=80, i
 #multimedia_convert_img_to_ico(HOME_DIR + "img01.jpg")
 ## OUTPUT: 'img02.ico', 256x256:
 #multimedia_convert_img_to_ico(HOME_DIR + "img01.jpg", HOME_DIR + "img02.ico")
-## OUTPUT: 'img01.ico', 16x16:
+## OUTPUT: 'img03.ico', 16x16:
 #multimedia_convert_img_to_ico(HOME_DIR + "img01.jpg", HOME_DIR + "img03.ico", -5)
 ##########
 # ICNS:  #
 ##########
+## OUTPUT: 'img01.icns', 128x128:
+#multimedia_convert_img_to_icns(HOME_DIR + "img01.jpg")
+## OUTPUT: 'img02.icns', 128x128:
+#multimedia_convert_img_to_icns(HOME_DIR + "img01.jpg", HOME_DIR + "img02.icns")
+## OUTPUT: 'img03.icns', 128x128 (BUG: only 128x128 for some reason):
+#multimedia_convert_img_to_icns(HOME_DIR + "img01.jpg", HOME_DIR + "img03.icns", 512, 2)
 
 
-#multimedia_convert_img_to_icns(HOME_DIR + "img01.jpg", HOME_DIR + "img01.icns", 512, 2)
+
+
+
+
+
+
 
 #multimedia_convert_img_to_bmp(HOME_DIR + "img01.jpg", HOME_DIR + "img01.bmp")
 #multimedia_convert_img_to_jpg(HOME_DIR + "img01.png", HOME_DIR + "img01.jpg", 95, True)
