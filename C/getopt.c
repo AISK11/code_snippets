@@ -37,7 +37,7 @@ int main(int argc, char *argv[]) {
             case ':':
                 printf("ERROR! Missing arg for '%c'!\n", optopt);
             break;
-        }   
-    }   
+        }
+    }
     return 0;
 }
