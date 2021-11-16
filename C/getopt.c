@@ -2,7 +2,7 @@
 #include <getopt.h> /* getopt */
 
 /* SOURCES:
- * https://azrael.digipen.edu/~mmead/www/Courses/CS180/getopt.html
+ * https://azrael.digipen.edu/~mmead/www/mg/getopt/index.html
 */
 
 int main(int argc, char *argv[]) {
